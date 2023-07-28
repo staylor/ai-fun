@@ -2,89 +2,111 @@
   font-family: sans-serif;
   margin: 0 auto;
   width: 80%;
+  padding-bottom: 40px;
 }
 
 .input {
+  border: 1px solid #ccc;
   border-radius: 3px;
-  border-width: 1px;
+  height: 60px;
   padding: 8px;
+  width: 50%;
 }
 
 .button {
   border-radius: 3px;
   border-width: 1px;
+  cursor: pointer;
   padding: 8px;
 }
 
 .chat {
   --bg: #fff;
 
+  border: 1px solid #ccc;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
   margin: 20px 0 0;
-  max-width: 450px;
-  padding: 0;
+  max-width: 850px;
+  padding: 30px;
 }
 
 .bubble {
   border-radius: 6px;
   line-height: 24px;
   margin-bottom: 15px;
-  max-width: 255px;
+  max-width: 655px;
   padding: 10px 20px;
   position: relative;
   word-wrap: break-word;
-
-  &:before {
-    width: 20px;
-  }
-
-  &:after {
-    width: 26px;
-    background-color: var(--bg);
-  }
-
-  &:before,
-  &:after {
-    position: absolute;
-    bottom: 0;
-    height: 25px;
-    content: '';
-  }
 }
 
-.question {
-  --question: lightblue;
+.bubble p:first-child {
+  margin: 0 0 1em;
+}
+
+.bubble p:last-child {
+  margin: 1em 0 0;
+}
+
+.bubble p:first-child:last-child {
+  margin: 0;
+}
+
+.bubble:before {
+  width: 20px;
+}
+
+.bubble:after {
+  width: 26px;
+  background-color: var(--bg);
+}
+
+.bubble:before,
+.bubble:after {
+  position: absolute;
+  bottom: 0;
+  height: 25px;
+  content: '';
+}
+
+.user {
+  --user: lightblue;
 
   align-self: flex-end;
-  background: var(--question);
-
-  &:before {
-    right: -7px;
-    background: var(--question);
-    border-bottom-left-radius: 16px 14px;
-  }
-
-  &:after {
-    right: -26px;
-    border-bottom-left-radius: 10px;
-  }
+  background: var(--user);
 }
 
-.answer {
-  --answer: pink;
+.user:before {
+  right: -7px;
+  background: var(--user);
+  border-bottom-left-radius: 16px 14px;
+}
+
+.user:after {
+  right: -26px;
+  border-bottom-left-radius: 10px;
+}
+
+.assistant {
+  --assistant: pink;
   align-self: flex-start;
-  background: var(--answer);
+  background: var(--assistant);
+}
 
-  &:before {
-    left: -7px;
-    background-color: var(--answer);
-    border-bottom-right-radius: 16px 14px;
-  }
+.assistant:before {
+  left: -7px;
+  background-color: var(--assistant);
+  border-bottom-right-radius: 16px 14px;
+}
 
-  &:after {
-    left: -26px;
-    border-bottom-right-radius: 10px;
-  }
+.assistant:after {
+  left: -26px;
+  border-bottom-right-radius: 10px;
+}
+
+.pending {
+  --assistant: yellow;
 }
